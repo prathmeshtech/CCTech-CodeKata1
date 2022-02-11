@@ -11,7 +11,7 @@ class Player(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.images = []
-        #self.images = pygame.transform.scale(, (50, 30))
+        #self.images = pygame.transform.scale(img, (50, 30))
         img = pygame.image.load("planet.png").convert()
         self.images.append(img)
         self.image = self.images[0]
