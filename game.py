@@ -6,12 +6,14 @@ import os
 Variables
 '''
 #making planets
-
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.images = []
+<<<<<<< HEAD
         # self.images = pygame.transform.scale(img, (50, 30))
+=======
+>>>>>>> 8ed8a5827482250027dedfd1bdc28565eaa48bcc
         img = pygame.image.load("planet.png")
         self.images.append(img)
         self.image = self.images[0]
