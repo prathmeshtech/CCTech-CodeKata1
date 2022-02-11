@@ -2,18 +2,31 @@ import pygame
 import sys
 import os
 
-'''
-Variables
-'''
+
 #making planets
-class Player(pygame.sprite.Sprite):
+class Planet(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.images = []
         img = pygame.image.load("planet.png")
+        img = pygame.transform.scale(img, (150, 150))
         self.images.append(img)
         self.image = self.images[0]
         self.rect = self.image.get_rect()
+
+#making Satellite
+class Satellite(pygame.sprite.Sprite):
+    def __init__(self):
+        pygame.sprite.Sprite.__init__(self)
+        self.images = []
+        img = pygame.image.load("sat.png")
+        img = pygame.transform.scale(img, (90, 70))
+        self.images.append(img)
+        self.image = self.images[0]
+        self.rect = self.image.get_rect()
+
+
+
 
 worldx = 1240
 worldy = 720
@@ -37,17 +50,19 @@ backdrop = pygame.image.load("stage.jpg")
 backdropbox = world.get_rect()
 
 #define planet
-player = Player()   # spawn player
+planet1 = Planet()   # spawn player
+planet1.rect.x = 400   # go to x
+planet1.rect.y = 500   # go to y
+planet1_list = pygame.sprite.Group()
+planet1_list.add(planet1)
 
-player.rect.x = 100   # go to x
-player.rect.y = 100   # go to y
-player_list = pygame.sprite.Group()
-player_list.add(player)
+#define Satellite
+satellite1 = Satellite()   # spawn player
+satellite1.rect.x = 100   # go to x
+satellite1.rect.y = 100   # go to y
+satellite1_list = pygame.sprite.Group()
+satellite1_list.add(satellite1)
 
-
-'''
-Main Loop
-'''
 
 while True:
     for event in pygame.event.get():
@@ -66,7 +81,8 @@ while True:
             finally:
                 main = False
     world.blit(backdrop, backdropbox)
-    player_list.draw(world)
+    planet1_list.draw(world)
+    satellite1_list.draw(world)
     pygame.display.flip()
     clock.tick(fps)
 
