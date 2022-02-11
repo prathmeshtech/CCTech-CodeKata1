@@ -12,7 +12,7 @@ class Player(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.images = []
         #self.images = pygame.transform.scale(img, (50, 30))
-        img = pygame.image.load("planet.png").convert()
+        img = pygame.image.load("planet.png")
         self.images.append(img)
         self.image = self.images[0]
         self.rect = self.image.get_rect()
