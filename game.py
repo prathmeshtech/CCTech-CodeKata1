@@ -10,10 +10,7 @@ class Player(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.images = []
-<<<<<<< HEAD
         # self.images = pygame.transform.scale(img, (50, 30))
-=======
->>>>>>> 8ed8a5827482250027dedfd1bdc28565eaa48bcc
         img = pygame.image.load("planet.png")
         self.images.append(img)
         self.image = self.images[0]
@@ -37,7 +34,7 @@ Setup
 clock = pygame.time.Clock()
 pygame.init()
 world = pygame.display.set_mode([worldx, worldy])
-backdrop = pygame.image.load("stage.jpg")
+backdrop = pygame.image.load("st.jpg")
 backdropbox = world.get_rect()
 
 #define planet
