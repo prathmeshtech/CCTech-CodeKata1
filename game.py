@@ -17,17 +17,6 @@ class Player(pygame.sprite.Sprite):
         self.image = self.images[0]
         self.rect = self.image.get_rect()
 
-#define planet
-player = Player()   # spawn player
-
-player.rect.x = 100   # go to x
-player.rect.y = 100   # go to y
-player_list = pygame.sprite.Group()
-player_list.add(player)
-
-
-
-
 worldx = 1240
 worldy = 720
 fps = 40  # frame rate
@@ -46,8 +35,16 @@ Setup
 clock = pygame.time.Clock()
 pygame.init()
 world = pygame.display.set_mode([worldx, worldy])
-backdrop = pygame.image.load('stage.jpg')
+backdrop = pygame.image.load("stage.jpg")
 backdropbox = world.get_rect()
+
+#define planet
+player = Player()   # spawn player
+
+player.rect.x = 100   # go to x
+player.rect.y = 100   # go to y
+player_list = pygame.sprite.Group()
+player_list.add(player)
 
 
 '''
@@ -74,6 +71,7 @@ while True:
     player_list.draw(world)
     pygame.display.flip()
     clock.tick(fps)
+
 
 
 
