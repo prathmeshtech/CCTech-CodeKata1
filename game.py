@@ -28,22 +28,18 @@ class Satellite(pygame.sprite.Sprite):
 
 
 
-
+#main frame
 worldx = 1240
 worldy = 720
 fps = 40  # frame rate
 ani = 4   # animation cycles
-main = True
 
 BLUE = (25, 25, 200)
 BLACK = (23, 23, 23)
 WHITE = (254, 254, 254)
 
-# put Python classes and functions here
-'''
-Setup
-'''
-# main window
+"""put Python classes and functions here
+# main window"""
 clock = pygame.time.Clock()
 pygame.init()
 world = pygame.display.set_mode([worldx, worldy])
@@ -66,6 +62,17 @@ satellite1_list.add(satellite1)
 
 
 while True:
+    world.blit(backdrop, backdropbox)
+    planet1_list.draw(world)
+    satellite1.rect.x +=3
+    satellite1.rect.y += 1
+    satellite1_list.draw(world)
+
+    #display whole window with updating frames
+    pygame.display.update()
+    clock.tick(fps)
+
+    #close the program
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
@@ -74,18 +81,7 @@ while True:
             finally:
                 main = False
 
-        if event.type == pygame.KEYDOWN:
-            if event.key == ord('q'):
-                pygame.quit()
-            try:
-                sys.exit()
-            finally:
-                main = False
-    world.blit(backdrop, backdropbox)
-    planet1_list.draw(world)
-    satellite1_list.draw(world)
-    pygame.display.flip()
-    clock.tick(fps)
+
 
 
 
