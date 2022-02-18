@@ -2,7 +2,6 @@ import numpy as np
 import random
 import pygame
 
-from assets import *
 
 satellites = ["satellite_image (1).png", "satellite_image (2).png", "satellite_image (3).png", "satellite_image (4).png"]
 
