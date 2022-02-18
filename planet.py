@@ -1,7 +1,7 @@
 import numpy as np
 import pygame
 import random
-from assets import *
+
 
 class Planet:
     def __init__(self):
